@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include <time.h>
+#include <unistd.h>
+#include <setjmp.h>
+jmp_buf jumpBuffer;
+int match = 0, computer = 0, you = 0;
 char gnd[4][4];
 int i, j, r;
 void print();
@@ -18,11 +23,15 @@ void check()
             if (gnd[b][1] == 'X')
             {
                 printf("congrats you won!!!");
+                you += 1;
+                longjmp(jumpBuffer, 1);
                 exit(0);
             }
             else
             {
                 printf("yeh!! comp won >_<");
+                computer += 1;
+                longjmp(jumpBuffer, 1);
                 exit(0);
             }
         }
@@ -35,11 +44,15 @@ void check()
             if (gnd[1][b] == 'X')
             {
                 printf("congrats you won!!!");
+                you += 1;
+                longjmp(jumpBuffer, 1);
                 exit(0);
             }
             else
             {
                 printf("yeh!! comp won >_<");
+                computer += 1;
+                longjmp(jumpBuffer, 1);
                 exit(0);
             }
         }
@@ -50,11 +63,15 @@ void check()
         if (gnd[1][1] == 'X')
         {
             printf("congrats you won!!!");
+            you++;
+            longjmp(jumpBuffer, 1);
             exit(0);
         }
         else
         {
             printf("yeh!! comp won >_<");
+            computer++;
+            longjmp(jumpBuffer, 1);
             exit(0);
         }
     }
@@ -64,11 +81,15 @@ void check()
         if (gnd[3][1] == 'X')
         {
             printf("congrats you won!!!");
+            you++;
+            longjmp(jumpBuffer, 1);
             exit(0);
         }
         else
         {
             printf("yeh!! comp won >_<");
+            computer++;
+            longjmp(jumpBuffer, 1);
             exit(0);
         }
     }
@@ -101,12 +122,13 @@ void input()
                     check();
                     print();
                     printf("match drawn!!");
+                    longjmp(jumpBuffer, 1);
                     exit(0);
                 }
             }
         }
     }
-    printf("enter the index of you entry: ");
+    printf("enter the index of your move: ");
     scanf("%d", &n);
     i = n / 10;
     j = n % 10;
@@ -125,6 +147,7 @@ void input()
     {
         print();
         printf("match drawn!!");
+        longjmp(jumpBuffer, 1);
         return;
     }
     compMove();
@@ -136,13 +159,17 @@ void input()
     if (r == 9)
     {
         printf("match drawn!!");
+        longjmp(jumpBuffer, 1);
         return;
     }
 }
 void compMove()
 {
+    printf("Thinking a move!!\n");
+    sleep(3);
     r++;
-    int a, b, f = 0;
+
+    int a, b;
     for (b = 1; b < 4; b++)
     {
         if (((gnd[b][1] == 'O' && gnd[b][2] == 'O') || (gnd[b][2] == 'O' && gnd[b][3] == 'O') || (gnd[b][1] == 'O' && gnd[b][3] == 'O')))
@@ -301,6 +328,11 @@ void compMove()
             return;
         }
     }
+    if (gnd[2][2] == '_' && r >= 2)
+    {
+        gnd[2][2] = 'O';
+        return;
+    }
     int k;
     while (2)
     {
@@ -317,33 +349,63 @@ void compMove()
     }
 }
 
+int l, toss, series;
 int main()
 {
-    srand(time(NULL)); // SEED THE RANDOM NUMBER
-    int l, toss;
-    for (i = 1; i < 4; i++)
+    if (match == 0)
     {
-        for (j = 1; j < 4; j++)
+        srand(time(NULL)); // SEED THE RANDOM NUMBER
+        printf("enter no of matches in series: ");
+        scanf("%d", &series);
+        printf("\n\nyou are 'X' and comp is 'O'\ninput ex- 32 for 3rd row 2nd column\n");
+    }
+    if (setjmp(jumpBuffer) != 0 && match < series)
+    {
+        printf("\n\n\ncurrent status: (%d-%d)\n",you,computer);
+        printf("starting match (%d/%d): \nloading board!!!\n",match+1,series);
+        sleep(3);
+    }
+
+    if (match < series)
+    {
+
+        r = 0;
+        match++;
+        for (i = 1; i < 4; i++)
         {
-            gnd[i][j] = '_';
+            for (j = 1; j < 4; j++)
+            {
+                gnd[i][j] = '_';
+            }
+        }
+
+        toss = rand() % 2;
+
+        if (toss == 1)
+        {
+            printf("comp won the toss!!\n\n\n");
+            compMove();
+        }
+        else
+            printf("you won the toss!!\n\n\n");
+        print();
+        for (l = 0; l < 9; l++)
+        {
+            if (r == 9)
+                break;
+            input();
         }
     }
-    printf("\n\nyou are 'X' and comp is 'O'\n");
-    toss = rand() % 2;
-
-    if (toss == 1)
-    {
-        printf("comp won the toss!!\n");
-        compMove();
-    }
     else
-        printf("you won the toss!!\n");
-    print();
-    for (l = 0; l < 9; l++)
     {
-        if (r == 9)
-            break;
-        input();
+        if (computer < you)
+            printf("\n\ngreat mind you won the series by (%d-%d)\n\n", you, computer);
+        else if (you < computer)
+            printf("\n\nyou lost series by computer by (%d-%d)\n\n", you, computer);
+        else
+            printf("\n\nseries drawn by (%d-%d)\n\n", you, you);
+
+        // printf("\nholia kaam\n");
     }
     return 0;
 }
