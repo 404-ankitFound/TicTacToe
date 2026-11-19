@@ -1,1 +1,302 @@
-f
+
+COMPUTER NETWORKS LABORATORY
+Cisco Packet Tracer – Practical Setup Steps
+
+BEFORE STARTING ANY QUESTION
+
+1. Open Cisco Packet Tracer.
+2. Place at least 2 routers and 3 switches.
+3. Add PCs and servers according to the question.
+4. Connect PCs to switches using Copper Straight-Through cables.
+5. Connect switches to routers.
+6. Give proper names to all devices.
+7. Create separate IP networks for departments.
+8. Assign IP addresses to router interfaces.
+9. Configure VLANs wherever required.
+10. Configure trunk ports wherever required.
+11. Configure routing between different networks.
+12. Configure DHCP wherever required.
+13. Configure DNS, HTTP, FTP and Email services.
+14. Test connectivity using ping.
+15. Save the Packet Tracer file with your SIC number.
+
+QUESTION 1: SMART UNIVERSITY CAMPUS NETWORK
+
+1. Open Packet Tracer and place 2 routers and 3 switches.
+2. Add PCs for Administration, CSE, ECE, Mechanical, Library, Examination and Hostel.
+3. Add servers for DNS, Web, FTP and Email.
+4. Connect all PCs to their respective switches.
+5. Connect the switches with each other and connect the router to the main switch.
+6. Create separate VLANs for all departments.
+7. Create VLAN 10 for Admin, VLAN 20 for CSE, VLAN 30 for ECE, VLAN 40 for Mechanical, VLAN 50 for Library, VLAN 60 for Examination and VLAN 70 for Hostel.
+8. Assign switch ports to their respective VLANs.
+9. Configure trunk ports between switches.
+10. Configure router subinterfaces using encapsulation dot1Q.
+11. Assign gateway IP addresses to all VLANs.
+12. Connect both routers and configure their IP addresses.
+13. Configure RIPv2 on both routers.
+14. Configure DHCP pools and enable DNS, HTTP, FTP and Email services.
+15. Test connectivity between departments and access all server services.
+
+QUESTION 2: SMART HOSPITAL NETWORK
+
+1. Open Packet Tracer and place 2 routers and 3 switches.
+2. Add PCs for Reception, OPD, Emergency, Laboratory, Operation Theatre, Pharmacy, Accounts and Administration.
+3. Add a server for DNS and the hospital web portal.
+4. Connect all PCs to their respective switches.
+5. Connect switches to each other and connect the router to the main switch.
+6. Create separate VLANs for clinical, administrative and guest departments.
+7. Assign switch ports to their respective VLANs.
+8. Configure trunk ports between switches.
+9. Configure router subinterfaces for inter-VLAN communication.
+10. Assign different gateway IP addresses to each VLAN.
+11. Connect the second router and configure its IP address.
+12. Configure static routing between both routers.
+13. Configure DHCP pools for different departments.
+14. Enable DNS and HTTP services on the hospital server.
+15. Test connectivity and verify access to the hospital web portal.
+
+QUESTION 3: MULTI-BRANCH BANKING NETWORK
+
+1. Open Packet Tracer and place 2 routers and 3 switches.
+2. Create one Head Office and four branches A, B, C and D.
+3. Add PCs for every branch.
+4. Add Database, ATM, DNS and Email servers at the Head Office.
+5. Connect all PCs to their respective switches.
+6. Connect the branch networks to the routers using suitable WAN links.
+7. Assign different IP networks to Head Office and all branches.
+8. Configure IP addresses on router interfaces.
+9. Assign gateway addresses to all branch networks.
+10. Configure DHCP pools for branch PCs.
+11. Configure static routes between the routers.
+12. Enable DNS and Email services on the Head Office servers.
+13. Enable FTP service for backup purposes.
+14. Test connectivity between branch PCs and Head Office servers.
+15. Verify routing tables and save the Packet Tracer file.
+
+QUESTION 4: E-COMMERCE COMPANY NETWORK
+
+1. Open Packet Tracer and place 2 routers and 3 switches.
+2. Add PCs for Sales, Customer Support, Logistics, Finance and IT.
+3. Add servers for Website, Database, Customer Portal, DNS and Email.
+4. Connect all PCs to their respective switches.
+5. Create separate VLANs for all departments.
+6. Create one additional VLAN for the Server Farm.
+7. Assign switch ports to their respective VLANs.
+8. Configure trunk ports between switches.
+9. Configure router subinterfaces for all VLANs.
+10. Assign gateway IP addresses to each VLAN.
+11. Connect the second router and configure routing.
+12. Configure DHCP pools for all user departments.
+13. Assign static IP addresses to all servers.
+14. Enable HTTP, DNS, FTP and Email services and configure ACLs for access restrictions.
+15. Test website access, DNS resolution, email communication and authorized FTP access.
+
+QUESTION 5: SMART CITY COMMUNICATION NETWORK
+
+1. Open Packet Tracer and place 2 routers and 3 switches.
+2. Add networks for Police Stations, Hospitals, Municipal Office, Schools and Fire Stations.
+3. Add PCs for every location.
+4. Connect all PCs to their respective switches.
+5. Connect switches to the routers.
+6. Assign different IP networks to all locations.
+7. Configure IP addresses on router interfaces.
+8. Configure DHCP pools for local networks.
+9. Enable RIPv2 on both routers.
+10. Advertise all connected networks using network commands.
+11. Add a central monitoring server.
+12. Add a public information web server and enable HTTP service.
+13. Configure DNS and add a domain name for the website.
+14. Test connectivity between different city networks and disconnect one redundant link to check alternate connectivity.
+15. Save the topology and verify routing tables.
+
+QUESTION 6: AIRPORT NETWORKING SYSTEM
+
+1. Open Packet Tracer and place 2 routers and 3 switches.
+2. Add PCs for Check-In, Security, Air Traffic Control, Baggage Handling and Administration.
+3. Add Flight Information and DNS servers.
+4. Connect all PCs to their respective switches.
+5. Connect switches with each other and connect the router to the main switch.
+6. Create separate VLANs for all operational departments.
+7. Assign switch ports to their respective VLANs.
+8. Configure trunk ports between switches.
+9. Configure router subinterfaces using dot1Q encapsulation.
+10. Assign different gateway IP addresses to each VLAN.
+11. Connect the second router and configure its IP address.
+12. Configure static routing or RIP as required.
+13. Configure DHCP pools for all VLANs.
+14. Enable DNS and HTTP services on the servers.
+15. Test connectivity and open the Flight Information Portal from different PCs.
+
+QUESTION 7: CORPORATE ENTERPRISE NETWORK
+
+1. Open Packet Tracer and place 2 routers and 3 switches.
+2. Divide the network into three floors.
+3. Add PCs for HR and Administration on Floor 1.
+4. Add PCs for Finance and Sales on Floor 2.
+5. Add PCs for IT Department on Floor 3.
+6. Add a server for DNS and the internal web portal.
+7. Connect each floor's PCs to its respective switch.
+8. Create separate VLANs for HR, Administration, Finance, Sales and IT.
+9. Assign switch ports to their respective VLANs.
+10. Configure trunk ports between floor switches.
+11. Configure router-on-a-stick for inter-VLAN routing.
+12. Assign gateway IP addresses to all VLANs.
+13. Configure DHCP pools for all departments.
+14. Enable DNS and HTTP services and configure NAT on the edge router if supported.
+15. Test communication within VLANs and between departments.
+
+QUESTION 8: SMART MANUFACTURING PLANT
+
+1. Open Packet Tracer and place 2 routers and 3 switches.
+2. Add PCs for Production, Warehouse, Quality Control, HR and Finance.
+3. Add Inventory Server and Employee Management Portal server.
+4. Connect PCs to their respective switches.
+5. Connect switches to each other and connect the routers.
+6. Create separate VLANs for all departments.
+7. Create an additional VLAN for the Server segment.
+8. Assign switch ports to their respective VLANs.
+9. Configure trunk ports between switches.
+10. Configure router subinterfaces for inter-VLAN routing.
+11. Assign gateway IP addresses to each VLAN.
+12. Configure DHCP pools for different departments.
+13. Assign static IP addresses to servers and enable DNS and HTTP services.
+14. Configure ACLs to allow only authorized departments to access designated servers.
+15. Test authorized and unauthorized access and save the Packet Tracer file.
+
+QUESTION 9: ISP NETWORK INFRASTRUCTURE
+
+1. Open Packet Tracer and place 2 routers and 3 switches.
+2. Create one ISP Core Network and three Customer Networks.
+3. Add PCs for all three customer networks.
+4. Connect customer PCs to their respective switches.
+5. Connect switches to the distribution and core routers.
+6. Assign different IP subnets to all customer networks.
+7. Configure IP addresses on router interfaces.
+8. Configure DHCP pools for customer networks.
+9. Configure OSPF or another suitable routing protocol.
+10. Advertise all connected networks using appropriate network commands.
+11. Configure NAT/PAT on the edge router if supported.
+12. Add a DNS server and configure DNS services.
+13. Add an external server to simulate an Internet service.
+14. Test connectivity between customer networks and the external server.
+15. Verify routing tables and save the topology.
+
+QUESTION 10: CYBER SECURITY OPERATIONS CENTER (SOC)
+
+1. Open Packet Tracer and place 2 routers and 3 switches.
+2. Add PCs for Security Analysts, Incident Response, Threat Intelligence and Management.
+3. Add servers for SIEM, DNS, Threat Database and Dashboard.
+4. Connect PCs and servers to their respective switches.
+5. Create separate VLANs for all four teams.
+6. Create one additional VLAN for the Server segment.
+7. Assign switch ports to their respective VLANs.
+8. Configure trunk ports between switches.
+9. Configure router subinterfaces for inter-VLAN routing.
+10. Assign gateway IP addresses to all VLANs.
+11. Connect the second router and configure routing.
+12. Configure DHCP pools for team networks.
+13. Enable DNS and HTTP services on the servers.
+14. Configure ACLs to restrict access to security databases and allow only Management to access designated reports.
+15. Test authorized and unauthorized access and save the configuration.
+
+QUESTION 11: SMART DIGITAL UNIVERSITY AND RESEARCH PARK
+
+1. Open Packet Tracer and place 2 routers and 3 switches.
+2. Create four zones: Academic, Administrative, Residential and Research.
+3. Add PCs for Engineering, MBA, MCA and Library.
+4. Add PCs for Administration, Accounts and Examination Cell.
+5. Add PCs for Boys Hostel and Girls Hostel.
+6. Add PCs for AI Lab, IoT Lab and Cyber Security Lab.
+7. Add five servers for DNS, DHCP, Web, FTP and Email services.
+8. Create at least 10 VLANs with different VLAN IDs and IP subnets.
+9. Assign switch ports to their respective VLANs.
+10. Configure trunk ports between switches.
+11. Configure inter-VLAN routing using router-on-a-stick or a multilayer switch.
+12. Assign gateway IP addresses to all VLANs.
+13. Configure routing between both routers.
+14. Configure DHCP, DNS, HTTP, FTP and Email services on the data-centre servers.
+15. Test connectivity, server access, file transfer and email communication.
+
+USEFUL CISCO COMMANDS
+
+Basic Configuration:
+enable
+configure terminal
+hostname R1
+exit
+end
+copy running-config startup-config
+
+Interface Configuration:
+interface gigabitEthernet 0/0
+ip address 192.168.1.1 255.255.255.0
+no shutdown
+exit
+
+VLAN Configuration:
+vlan 10
+name ADMIN
+exit
+
+Access Port Configuration:
+interface fastEthernet 0/1
+switchport mode access
+switchport access vlan 10
+exit
+
+Trunk Port Configuration:
+interface fastEthernet 0/24
+switchport mode trunk
+no shutdown
+exit
+
+Router-on-a-Stick:
+interface gigabitEthernet 0/0.10
+encapsulation dot1Q 10
+ip address 192.168.10.1 255.255.255.0
+exit
+
+DHCP Configuration:
+ip dhcp excluded-address 192.168.10.1 192.168.10.10
+ip dhcp pool ADMIN
+network 192.168.10.0 255.255.255.0
+default-router 192.168.10.1
+dns-server 192.168.10.10
+exit
+
+RIP Configuration:
+router rip
+version 2
+no auto-summary
+network 192.168.1.0
+exit
+
+Static Routing:
+ip route 192.168.2.0 255.255.255.0 192.168.1.2
+
+Useful Verification Commands:
+show vlan brief
+show interfaces trunk
+show ip interface brief
+show ip route
+show ip protocols
+show ip dhcp binding
+show running-config
+
+Connectivity Test:
+ping 192.168.1.1
+traceroute 192.168.2.1
+
+FINAL SUBMISSION CHECKLIST
+
+1. Save the Packet Tracer file using your SIC number.
+2. Include at least 2 routers and 3 switches.
+3. Give proper names to all devices and networks.
+4. Prepare an IP addressing table.
+5. Prepare a VLAN table wherever VLANs are used.
+6. Take a screenshot of the complete network topology.
+7. Take screenshots of VLAN and trunk configurations.
+8. Take screenshots of routing tables wherever routing is used.
+9. Show successful connectivity using ping.
+10. Include screenshots of DHCP, DNS, HTTP, FTP and Email tests wherever required.
